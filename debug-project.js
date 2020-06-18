@@ -8,9 +8,10 @@
  * generateIntegersArray(4, 9) -> [4, 5, 6, 7, 8, 9]
  *
  */
-function generateIntegersArray(firstNumber, lastNumber) {
+function generateIntegersArray(firstNumber, lastNumber) 
+{
   const integersArray = [];
-  whille (firstNumber < lastNumber)
+  while (firstNumber < lastNumber)
     integersArray.push(firstNumber);
     lastNumber++;
 
@@ -28,6 +29,8 @@ function generateIntegersArray(firstNumber, lastNumber) {
  * noZeroes("0130401431400") -> "1304014314"
  *
  */
+
+ //============//
 function noZeroes(numberString) {
   whil (numberString.startsWith("0")) {
     numberString.slice(0, -1);

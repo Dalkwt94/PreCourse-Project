@@ -9,155 +9,159 @@
  * Good luck!
  */
 
-/**
- * sumOdds(numbers):
- * - receives an array of numbers
- * - returns the sum of only the ODD numbers
- *
- * e.g.
- * sumOdds([1, 2, 3, 4, 5, 6, 7, 8, 9]) -> 25
- * sumOdds([3, 7, 8, 15, 2, 1, 13]) -> 39
- */
+//============================================================================================//
+
 function sumOdds(numbers) {
-  // Your code here
-}
+  let sum = 0;
 
-/**
- * characterCount(string, c):
- * - receives a string and a character
- * - returns the number of times `c` occurs in the string
- * - note: this has to be case-insensitive
- *
- * e.g.
- * characterCount("Michael Stephenson", "e") -> 3
- * characterCount("Character Count is clever", "c") -> 4
- *
- * Hint: Use string methods to make it case-insensitive
- */
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+      //numbersUpdated2.push(numbers2[i]);
+      sum = sum + numbers[i];
+    }
+  }
+
+  return sum;
+}
+sumOdds([2, 2, 4, 6, 2]);
+//console.log(sum);
+//============================================================================================//
+
 function characterCount(string, c) {
-  // Your code here
+  let count = 0;
+  let s1 = string.toUpperCase();
+  let s2 = c.toUpperCase();
+  for (let i = 0; i < string.length; i++) {
+    if (s1[i] === s2) {
+      count++;
+    }
+  }
+  return count;
 }
+characterCount("aAlal", "A");
+//console.log(count);
+//============================================================================================//
 
-/**
- * differences(numbers):
- * - receives an array of numbers
- * - returns an array that has the difference in the values of the numbers array.
- * - see example below for clarification.
- *
- * e.g.
- * differences([1, 3, 7, 9, 12]) -> [2, 4, 2, 3]
- * 3 - 1 = 2
- * 7 - 3 = 4
- * 9 - 7 = 2
- * 12 - 9 = 3
- *
- * differences([11, 35, 52, 14, 56]) -> [24,  17, -38,  42]
- */
 function differences(numbers) {
-  // Your code here
+  let arr = [];
+  for (let i = 0; i < numbers.length - 1; i++) {
+    arr.push(numbers[i + 1] - numbers[i]);
+  }
+  return arr;
 }
 
-/**
- * largestIncrement(numbers):
- * - receives an array of numbers
- * - returns the largest difference between two consecutive numbers in the array
- * - see example below for clarification
- *
- * e.g.
- * largestIncrement([1, 3, 7, 9, 12]) -> 4
- * 3 - 1 = 2
- * 7 - 3 = 4
- * 9 - 7 = 2
- * 12 - 9 = 3
- * largest: 4
- *
- * largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]) -> 545
- */
+differences([5, 7, 10, 4, 11]);
+//console.log(arr);
+
+//============================================================================================//
+
 function largestIncrement(numbers) {
-  // Your code here
+  let arr = [];
+  let b;
+  for (let i = 0; i < numbers.length - 1; i++) {
+    arr.push(numbers[i + 1] - numbers[i]);
+  }
+
+  b = Math.max.apply(null, arr);
+  return b;
 }
 
-/**
- * afterX(numbers, x):
- * - receives an array of numbers, and a number `x`.
- * - returns an array of every number in `numbers` that occurs after `x`.
- *
- * - assume there are no duplicate numbers.
- *
- * e.g.
- * afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3) -> [4, 5, 6, 7, 8, 9]
- * afterX([11, 35, 52, 14, 56, 601, 777, 888, 999], 52) -> [14, 56, 601, 777, 888, 999]
- */
+largestIncrement([4, 6, 7, 10, 33]);
+//console.log(b);
+
+//============================================================================================//
+
 function afterX(numbers, x) {
-  // Your code here
+  let arr = [];
+  let a = 0;
+  //let arr = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === x) {
+      a = i;
+      break;
+    }
+  }
+  arr = numbers.slice(a);
+
+  return arr;
 }
 
-/**
- * abbreviate(firstName, lastName):
- * - receives a first name and a last name
- * - returns the initials in uppercase
- *
- * e.g.
- * abbreviate("Michael", "Singer") -> "MS"
- * abbreviate("jordan", "peterson") -> "JP"
- *
- * Hint: Use string method .toUpperCase()
- */
+afterX([1, 2, 5, 7, 3], 7);
+//console.log(arr);
+//============================================================================================//
+
 function abbreviate(firstName, lastName) {
-  // Your code here
+  let res;
+  let fn = firstName.substring(1, 0);
+  let ln = lastName.substring(1, 0);
+  res = fn.concat(ln);
+  res = res.toUpperCase();
+
+  return res;
 }
 
-/**
- * isUpperCase(string):
- * - receives a string
- * - returns true if the string is uppercase, false otherwise
- *
- * e.g.
- * isUpperCase("Mickey S") -> false
- * isUpperCase("JCREW") -> true
- *
- */
+abbreviate("dalal", "rasheedi");
+//console.log(res);
+
+//============================================================================================//
+
 function isUpperCase(string) {
-  // Your code here
+  let b;
+
+  if (string === string.toUpperCase()) {
+    b = "true";
+  } else {
+    b = "false";
+  }
+
+  return b;
 }
 
-/**
- * elementInArray(numbers, x):
- * - receives an array of numbers, and a number `x`.
- * - returns true if `x` is found in the array, false otherwise
- *
- * e.g.
- * elementInArray([5, 6, 7], 6) -> true
- * elementInArray([5, 6, 7], 8) -> false
- *
- */
+isUpperCase("DALAL");
+//console.log(b);
+
+//============================================================================================//
+
 function elementInArray(numbers, x) {
-  // Your code here
+  let b;
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === x) {
+      b = 1;
+    }
+  }
+
+  if (b === 1) {
+    return (b = "true");
+  } else {
+    return (b = "false");
+  }
 }
 
-/**
- * reverseString(string):
- * - receives a string
- * - returns the reverse of the string
- *
- * e.g.
- * reverseString("string") -> "gnirts"
- * reverseString("CODED") -> "DEDOC"
- *
- */
+elementInArray([1, 2, 4, 5, 6], 5);
+//console.log(b);
+
+//============================================================================================//
+
 function reverseString(string) {
-  // Your code here
+  let res;
+  res = string.split("").reverse().join("");
+  return res;
 }
 
-// console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
-// console.log(characterCount("Character Count is clever", "c"));
-// console.log(differences([11, 35, 52, 14, 56]));
-// console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
-// console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
-// console.log(abbreviate("miss", "Stephane"));
-// console.log(isUpperCase("JCREW"));
-// console.log(elementInArray([5, 6, 7], 8));
-// console.log(reverseString("CODED"));
+reverseString("Dalal");
+//console.log(res);
+
+//============================================================================================//
+
+console.log(sumOdds([3, 7, 8, 15, 2, 1, 13]));
+console.log(characterCount("Character Count is clever", "c"));
+console.log(differences([11, 35, 52, 14, 56]));
+console.log(largestIncrement([11, 35, 52, 14, 56, 601, 777, 888, 999]));
+console.log(afterX([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+console.log(abbreviate("miss", "Stephane"));
+console.log(isUpperCase("JCREW"));
+console.log(elementInArray([5, 6, 7], 8));
+console.log(reverseString("CODED"));
 
 module.exports = {
   sumOdds,

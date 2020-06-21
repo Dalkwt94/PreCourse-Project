@@ -1,46 +1,37 @@
-/**
- * generateIntegersArray(firstNumber, lastNumber):
- * - receives two numbers
- * - returns an array with the integers between the two numbers
- *
- * e.g.
- * generateIntegersArray(2, 5) -> [2, 3, 4, 5]
- * generateIntegersArray(4, 9) -> [4, 5, 6, 7, 8, 9]
- *
- */
-function generateIntegersArray(firstNumber, lastNumber) 
-{
-  const integersArray = [];
-  while (firstNumber < lastNumber)
+function generateIntegersArray(firstNumber, lastNumber) {
+  let integersArray = [];
+  while (firstNumber <= lastNumber) {
     integersArray.push(firstNumber);
-    lastNumber++;
+    firstNumber = firstNumber + 1;
+  }
 
-  return IntegersArray;
+  return integersArray;
 }
+generateIntegersArray(5, 10);
+//console.log(integersArray);
 
-/**
- * noZeroes(numberString):
- * - receives a number as a string
- * - removes any zeroes at the beginning and the end of the number string
- * - returns the resulting number string without zeroes at the beginning or the end
- *
- * e.g.
- * noZeroes("0011000") -> "11"
- * noZeroes("0130401431400") -> "1304014314"
- *
- */
+//==================================================//
 
- //============//
 function noZeroes(numberString) {
-  whil (numberString.startsWith("0")) {
-    numberString.slice(0, -1);
+  //let numberString;
+  let a;
+  let b;
+  while (numberString.startsWith("0")) {
+    numberString = numberString.slice(2);
   }
 
-  while (numberString.endswith("0") {
-    numberString.slice[1];
+  a = numberString;
+
+  while (a.endsWith("0")) {
+    a = a.slice(0, -2);
   }
-  numberString;
+
+  b = a;
+
+  return b;
 }
+noZeroes("0023404500");
+//console.log(b);
 
 // console.log(generateIntegersArray(3, 7));
 // console.log(noZeroes("001100"));
